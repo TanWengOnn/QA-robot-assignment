@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.8.10 on linux)" generated="20220922 08:20:54.395" rpa="false" schemaversion="3">
+<suite id="s1" name="Test-Virtual-Account" source="/home/tan/Desktop/QA/robot/robot-assigment/Assignment-1/test-virtual-account.robot">
+<test id="s1-t1" name="Login To Deriv" line="6">
+<kw name="Login To Deriv Key" library="keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>https://app.deriv.com/</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220922 08:20:54.552" level="INFO">Opening browser 'chrome' to base url 'https://app.deriv.com/'.</msg>
+<status status="PASS" starttime="20220922 08:20:54.552" endtime="20220922 08:20:57.899"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220922 08:20:57.899" endtime="20220922 08:20:58.004"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.05</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20220922 08:20:58.004" endtime="20220922 08:20:58.004"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<arg>${loading_interface}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="PASS" starttime="20220922 08:20:58.005" endtime="20220922 08:21:01.716"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220922 08:21:01.717" level="INFO">Clicking element '//button[@id='dt_login_button']'.</msg>
+<status status="PASS" starttime="20220922 08:21:01.717" endtime="20220922 08:21:04.288"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${email_input}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220922 08:21:04.289" endtime="20220922 08:21:04.361"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${email_input}</arg>
+<arg>weng.onn@besquare.com.my</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220922 08:21:04.361" level="INFO">Typing text 'weng.onn@besquare.com.my' into text field '//input[@type='email']'.</msg>
+<status status="PASS" starttime="20220922 08:21:04.361" endtime="20220922 08:21:04.596"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@type='password']</arg>
+<arg>Test12345</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220922 08:21:04.596" level="INFO">Typing text 'Test12345' into text field '//input[@type='password']'.</msg>
+<status status="PASS" starttime="20220922 08:21:04.596" endtime="20220922 08:21:04.846"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[@type='submit']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220922 08:21:04.847" level="INFO">Clicking element '//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20220922 08:21:04.847" endtime="20220922 08:21:06.658"/>
+</kw>
+<status status="PASS" starttime="20220922 08:20:54.551" endtime="20220922 08:21:06.659"/>
+</kw>
+<status status="PASS" starttime="20220922 08:20:54.550" endtime="20220922 08:21:06.659"/>
+</test>
+<test id="s1-t2" name="Validate Real Account" line="9">
+<kw name="Validate Real Account Key" library="keywords">
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<arg>${loading_interface}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="PASS" starttime="20220922 08:21:06.662" endtime="20220922 08:21:10.157"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>dt_core_account-info_acc-info</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220922 08:21:10.157" level="INFO">Clicking element 'dt_core_account-info_acc-info'.</msg>
+<status status="PASS" starttime="20220922 08:21:10.157" endtime="20220922 08:21:10.510"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//div[contains(@id,"dt_CR")]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220922 08:21:10.580" level="INFO">Current page contains element '//div[contains(@id,"dt_CR")]'.</msg>
+<status status="PASS" starttime="20220922 08:21:10.511" endtime="20220922 08:21:10.580"/>
+</kw>
+<status status="PASS" starttime="20220922 08:21:06.661" endtime="20220922 08:21:10.580"/>
+</kw>
+<status status="PASS" starttime="20220922 08:21:06.660" endtime="20220922 08:21:10.580"/>
+</test>
+<test id="s1-t3" name="Navigate To Virtual Account" line="12">
+<kw name="Navigate To Virtual Account Key" library="keywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>dt_core_account-switcher_demo-tab</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220922 08:21:10.581" level="INFO">Clicking element 'dt_core_account-switcher_demo-tab'.</msg>
+<status status="PASS" starttime="20220922 08:21:10.581" endtime="20220922 08:21:10.753"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//div[contains(@id,"dt_VR")]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220922 08:21:10.825" level="INFO">Current page contains element '//div[contains(@id,"dt_VR")]'.</msg>
+<status status="PASS" starttime="20220922 08:21:10.753" endtime="20220922 08:21:10.825"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//div[contains(@id,"dt_VR")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220922 08:21:10.826" level="INFO">Clicking element '//div[contains(@id,"dt_VR")]'.</msg>
+<status status="PASS" starttime="20220922 08:21:10.825" endtime="20220922 08:21:11.098"/>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="SeleniumLibrary">
+<arg>${loading_interface}</arg>
+<arg>30</arg>
+<doc>Waits until the element ``locator`` disappears from the current page.</doc>
+<status status="PASS" starttime="20220922 08:21:11.098" endtime="20220922 08:21:17.913"/>
+</kw>
+<status status="PASS" starttime="20220922 08:21:10.581" endtime="20220922 08:21:17.914"/>
+</kw>
+<status status="PASS" starttime="20220922 08:21:10.580" endtime="20220922 08:21:17.914"/>
+</test>
+<test id="s1-t4" name="Validate Virtual Account" line="15">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>dt_core_account-info_acc-info</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220922 08:21:17.917" level="INFO">Clicking element 'dt_core_account-info_acc-info'.</msg>
+<status status="PASS" starttime="20220922 08:21:17.916" endtime="20220922 08:21:18.088"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>dt_core_account-switcher_demo-tab</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220922 08:21:18.089" level="INFO">Clicking element 'dt_core_account-switcher_demo-tab'.</msg>
+<status status="PASS" starttime="20220922 08:21:18.089" endtime="20220922 08:21:18.278"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>//div[contains(@id,"dt_VR") and contains(@class, "--selected")]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220922 08:21:18.339" level="INFO">Current page contains element '//div[contains(@id,"dt_VR") and contains(@class, "--selected")]'.</msg>
+<status status="PASS" starttime="20220922 08:21:18.278" endtime="20220922 08:21:18.339"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220922 08:21:18.339" endtime="20220922 08:21:18.444"/>
+</kw>
+<status status="PASS" starttime="20220922 08:21:17.915" endtime="20220922 08:21:18.444"/>
+</test>
+<status status="PASS" starttime="20220922 08:20:54.397" endtime="20220922 08:21:18.445"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Test-Virtual-Account">Test-Virtual-Account</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
