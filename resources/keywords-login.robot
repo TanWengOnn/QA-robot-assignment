@@ -16,8 +16,8 @@ Login To Deriv Key
     Wait Until Page Does Not Contain Element    ${loading_interface}     30
     Click Element    ${login_button} 
     Wait Until Page Contains Element    ${email_input}    30
-    Input Text    ${email_input}    weng.onn@besquare.com.my
-    Input Text    //input[@type='password']    Test12345
+    Input Text    ${email_input}    test@gmail.com
+    Input Text    //input[@type='password']    Test@12345
     Click Element    //button[@type='submit']
 
 Validate Real Account Key
